@@ -94,3 +94,4 @@
             print_r(self::$object->routes);
         }
     }
+    
