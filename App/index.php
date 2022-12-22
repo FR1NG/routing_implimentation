@@ -4,18 +4,31 @@
     error_reporting(E_ALL);
 
 
-    require(__DIR__.'/vendor/autoload.php');
+    require_once __DIR__.'/vendor/autoload.php';
 
-    use App\Controllers\TestController;
     use App\Classes\Router;
 
     // $test = new TestController();
 
-    $rt = new Router();
+    // $rt = new Router();
+    // try {
+    //     $rt->register("/index/", [App\Controllers\TestController::class, 'notfound'])
+    //     ->register("/create/", [App\Controllers\TestController::class, 'create'])
+    //     ->resolve($_SERVER["REQUEST_URI"]);
+    // }
+    // catch (\Exception $e)
+    // {
+    //     echo $e->getMessage();
+    // }
 
-    $rt->register("/index/", [App\Controllers\TestController::class, 'index'])
-    ->register("/create/", [App\Controllers\TestController::class, 'create'])
-    ->resolve($_SERVER["REQUEST_URI"]);
+    Router::Get("/index/", [App\Controllers\TestController::class, 'index']);
+    Router::Patch("/edit/", [App\Controllers\TestController::class, 'create']);
+    Router::Post("/store/", [App\Controllers\TestController::class, 'store']);
+    Router::Delete("/delete/", [App\Controllers\TestController::class, 'delete']);
+
+    Router::resolve($_SERVER["REQUEST_URI"]);
+
+    // print_r($_SERVER["REQUEST_METHOD"]);
 
     // print_r($_SERVER["REQUEST_URI"]);
 
