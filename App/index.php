@@ -8,19 +8,10 @@
 
     use App\Classes\Router;
 
-    // $test = new TestController();
 
-    // $rt = new Router();
-    // try {
-    //     $rt->register("/index/", [App\Controllers\TestController::class, 'notfound'])
-    //     ->register("/create/", [App\Controllers\TestController::class, 'create'])
-    //     ->resolve($_SERVER["REQUEST_URI"]);
-    // }
-    // catch (\Exception $e)
-    // {
-    //     echo $e->getMessage();
-    // }
+    define("VIEWS_PATH", __DIR__."/src/views/");
 
+    // echo VIEWS_PATH;
     Router::Get("/index/", [App\Controllers\TestController::class, 'index']);
     Router::Get("/create/", [App\Controllers\TestController::class, 'create']);
     Router::Patch("/edit/", [App\Controllers\TestController::class, 'create']);
@@ -28,10 +19,5 @@
     Router::Delete("/delete/", [App\Controllers\TestController::class, 'delete']);
 
     Router::resolve($_SERVER["REQUEST_URI"]);
-
-    // print_r($_SERVER["REQUEST_METHOD"]);
-
-    // print_r($_SERVER["REQUEST_URI"]);
-
 
     
