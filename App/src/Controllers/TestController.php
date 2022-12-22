@@ -5,17 +5,17 @@
         public function __construct()
         {
             // echo "hello from the test class";
+            echo " <ul> <li><a href='/index'>index</a> </li>  <li><a href='/create'>create</a> </li> </ul> <br>";
+            echo "<form  method='post' action='/store'><input name='ideas' type='text' placeholder='write your thougths here !' /><button type='submit'> submit </button></form>";
         }
 
         public function index()
         {
-            echo " <ul> <li><a href='/create'>index</a> </li>  <li><a href='/create'>create</a> </li> </ul> <br>";
             echo "hello from the index";
         }
 
         public function create()
         {
-            echo " <ul> <li><a href='index'>index</a> </li>  <li><a href='create'>create</a> </li> </ul> <br>";
             echo "hello from create";
         }
 

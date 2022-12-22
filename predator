@@ -1,0 +1,8 @@
+#!/usr/bin/php
+<?php
+
+    if ($argv[1] == "serve")
+        system("docker compose up ". $argv[2]);
+
+    if ($argv[1] == "stop")
+        system("docker compose down ". $argv[2]);

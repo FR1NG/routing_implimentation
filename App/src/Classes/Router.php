@@ -83,13 +83,10 @@
 
         public static function resolve($route)
         {
-            try {
-                self::$object->call($route);
+                $location = explode("?", $route);
+                echo "from resolve $location[0]";
+                self::$object->call($location[0]);
                 return self::$object;
-            } catch (\Exception $e)
-            {
-                echo $e->getMessage();
-            }
         }
 
         public function test()

@@ -22,6 +22,7 @@
     // }
 
     Router::Get("/index/", [App\Controllers\TestController::class, 'index']);
+    Router::Get("/create/", [App\Controllers\TestController::class, 'create']);
     Router::Patch("/edit/", [App\Controllers\TestController::class, 'create']);
     Router::Post("/store/", [App\Controllers\TestController::class, 'store']);
     Router::Delete("/delete/", [App\Controllers\TestController::class, 'delete']);
