@@ -30,5 +30,6 @@
 
         public function delete() {
             echo "hello from delte method";
+        
         }
     }
